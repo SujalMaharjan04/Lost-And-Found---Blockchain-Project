@@ -59,6 +59,7 @@ This project was built for the **Blockchain 101 Workshop (July 4–5, Kathmandu)
 
 ##  Project Structure
 
+```text
 lost-found-dapp/
 ├── app/
 │   ├── public/
@@ -91,7 +92,7 @@ lost-found-dapp/
 ├── package.json
 ├── rust-toolchain.toml
 └── tsconfig.json
-
+```
 ---
 
 ##  Getting Started
