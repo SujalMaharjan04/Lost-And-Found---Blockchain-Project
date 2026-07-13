@@ -59,50 +59,38 @@ This project was built for the **Blockchain 101 Workshop (July 4–5, Kathmandu)
 
 ##  Project Structure
 
-.
-├── Anchor.toml
-├── app
-│   ├── eslint.config.js
-│   ├── index.html
-│   ├── package.json
-│   ├── package-lock.json
-│   ├── public
-│   │   ├── favicon.svg
-│   │   └── icons.svg
-│   ├── README.md
-│   ├── src
-│   │   ├── App.css
+lost-found-dapp/
+├── app/
+│   ├── public/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── hooks/
+│   │   ├── idl/
+│   │   ├── lib/
+│   │   ├── pages/
+│   │   ├── providers/
+│   │   ├── types/
 │   │   ├── App.tsx
-│   │   ├── assets
-│   │   ├── components
-│   │   ├── hooks
-│   │   ├── idl
-│   │   ├── index.css
-│   │   ├── lib
 │   │   ├── main.tsx
-│   │   ├── pages
-│   │   ├── providers
-│   │   └── types
+│   │   └── index.css
+│   ├── package.json
+│   ├── vite.config.ts
 │   ├── tailwind.config.js
-│   ├── tsconfig.app.json
-│   ├── tsconfig.json
-│   ├── tsconfig.node.json
-│   └── vite.config.ts
-├── Cargo.lock
-├── Cargo.toml
-├── migrations
+│   └── tsconfig.json
+├── programs/
+│   └── lost-found-dapp/
+│       ├── src/
+│       └── Cargo.toml
+├── migrations/
 │   └── deploy.ts
-├── package.json
-├── programs
-│   └── lost-found-dapp
-│       ├── Cargo.toml
-│       └── src
-├── rust-toolchain.toml
-├── tests
+├── tests/
 │   └── lost-found-dapp.ts
-├── tsconfig.json
-└── yarn.lock
-
+├── Anchor.toml
+├── Cargo.toml
+├── package.json
+├── rust-toolchain.toml
+└── tsconfig.json
 
 ---
 
