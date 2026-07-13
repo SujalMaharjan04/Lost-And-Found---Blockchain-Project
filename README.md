@@ -108,6 +108,7 @@ lost-found-dapp/
 ### Clone the repository
 
 git clone https://github.com/SujalMaharjan04/Lost-And-Found---Blockchain-Project.git
+
 cd to the root directory where the project was cloned to
 
 
