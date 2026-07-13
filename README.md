@@ -115,6 +115,7 @@ cd to the root directory where the project was cloned to
 ### Install frontend dependencies
 
 cd frontend
+
 npm install
 
 
