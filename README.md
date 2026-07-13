@@ -132,6 +132,10 @@ anchor build
 
 anchor deploy
 
+### Note
+
+This project is already deployed to Solana Devnet. You do not need to run anchor build or anchor deploy to use the application. Those commands are only required if you intend to modify and redeploy the smart contract.
+
 
 
 ##  Author
