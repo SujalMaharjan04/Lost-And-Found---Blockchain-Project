@@ -1,0 +1,490 @@
+{
+  "address": "3wH477PFXiqmei2cvxZiTrLescHPZ5xp5AUuPhP6eFJc",
+  "metadata": {
+    "name": "lost_found_dapp",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "approve_claim",
+      "discriminator": [
+        74,
+        228,
+        211,
+        63,
+        140,
+        255,
+        69,
+        210
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "signer": true,
+          "relations": [
+            "lost_item"
+          ]
+        },
+        {
+          "name": "lost_item",
+          "writable": true
+        },
+        {
+          "name": "claim",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  108,
+                  97,
+                  105,
+                  109
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "lost_item"
+              }
+            ]
+          }
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "cancel_listing",
+      "discriminator": [
+        41,
+        183,
+        50,
+        232,
+        230,
+        233,
+        157,
+        70
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "lost_item"
+          ]
+        },
+        {
+          "name": "lost_item",
+          "writable": true
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "confirm_received",
+      "discriminator": [
+        185,
+        220,
+        54,
+        84,
+        188,
+        173,
+        87,
+        164
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "signer": true,
+          "relations": [
+            "lost_item"
+          ]
+        },
+        {
+          "name": "lost_item",
+          "writable": true
+        },
+        {
+          "name": "finder",
+          "writable": true
+        },
+        {
+          "name": "claim",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  108,
+                  97,
+                  105,
+                  109
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "lost_item"
+              }
+            ]
+          }
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "initialize_lost_item",
+      "discriminator": [
+        1,
+        249,
+        120,
+        27,
+        89,
+        197,
+        214,
+        187
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "lost_item",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  108,
+                  111,
+                  115,
+                  116,
+                  95,
+                  105,
+                  116,
+                  101,
+                  109
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "owner"
+              },
+              {
+                "kind": "arg",
+                "path": "item_id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "item_id",
+          "type": "u64"
+        },
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "name": "category",
+          "type": "string"
+        },
+        {
+          "name": "last_seen_location",
+          "type": "string"
+        },
+        {
+          "name": "image_url",
+          "type": "string"
+        },
+        {
+          "name": "reward_lamport",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "reject_claim",
+      "discriminator": [
+        238,
+        185,
+        227,
+        8,
+        51,
+        188,
+        35,
+        182
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "signer": true,
+          "relations": [
+            "lost_item"
+          ]
+        },
+        {
+          "name": "lost_item",
+          "writable": true
+        },
+        {
+          "name": "finder",
+          "writable": true
+        },
+        {
+          "name": "claim",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  108,
+                  97,
+                  105,
+                  109
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "lost_item"
+              }
+            ]
+          }
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "submit_recovery_claim",
+      "discriminator": [
+        68,
+        162,
+        238,
+        168,
+        26,
+        67,
+        73,
+        63
+      ],
+      "accounts": [
+        {
+          "name": "finder",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "lost_item",
+          "writable": true
+        },
+        {
+          "name": "claim",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  108,
+                  97,
+                  105,
+                  109
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "lost_item"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "image_url",
+          "type": "string"
+        },
+        {
+          "name": "found_location",
+          "type": "string"
+        },
+        {
+          "name": "message",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "LostItem",
+      "discriminator": [
+        214,
+        67,
+        108,
+        116,
+        34,
+        20,
+        71,
+        202
+      ]
+    },
+    {
+      "name": "RecoveryClaim",
+      "discriminator": [
+        254,
+        124,
+        75,
+        93,
+        170,
+        80,
+        41,
+        122
+      ]
+    }
+  ],
+  "types": [
+    {
+      "name": "ItemStatus",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Open"
+          },
+          {
+            "name": "ClaimSubmitted"
+          },
+          {
+            "name": "ReadyForPickUp"
+          },
+          {
+            "name": "Completed"
+          },
+          {
+            "name": "Cancelled"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LostItem",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "finder",
+            "type": "pubkey"
+          },
+          {
+            "name": "item_id",
+            "type": "u64"
+          },
+          {
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "name": "category",
+            "type": "string"
+          },
+          {
+            "name": "last_seen_location",
+            "type": "string"
+          },
+          {
+            "name": "image_url",
+            "type": "string"
+          },
+          {
+            "name": "reward_lamports",
+            "type": "u64"
+          },
+          {
+            "name": "status",
+            "type": {
+              "defined": {
+                "name": "ItemStatus"
+              }
+            }
+          },
+          {
+            "name": "created_at",
+            "type": "i64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RecoveryClaim",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "lost_item",
+            "type": "pubkey"
+          },
+          {
+            "name": "finder",
+            "type": "pubkey"
+          },
+          {
+            "name": "image_url",
+            "type": "string"
+          },
+          {
+            "name": "found_location",
+            "type": "string"
+          },
+          {
+            "name": "message",
+            "type": "string"
+          },
+          {
+            "name": "created_at",
+            "type": "i64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ]
+}

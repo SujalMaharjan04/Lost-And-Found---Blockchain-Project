@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: rgb(10 10 10);
+  color: rgb(245 245 245);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.card-surface {
+  @apply rounded-2xl border border-neutral-800 bg-neutral-900/60 backdrop-blur;
+}
